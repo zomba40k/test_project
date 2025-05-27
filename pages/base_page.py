@@ -1,6 +1,7 @@
 
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
+
 import math
 class BasePage():
     def __init__(self, browser, url, timeout=10):
@@ -29,4 +30,4 @@ class BasePage():
             print(f"Your code: {alert_text}")
             alert.accept()
         except NoAlertPresentException:
-            print("No second alert presented")
+            print("No  alert presented")

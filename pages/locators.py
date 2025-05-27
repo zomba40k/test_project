@@ -12,5 +12,5 @@ class ProductPageLocators:
     ADD_TO_CART = (By.CSS_SELECTOR, "#add_to_basket_form > button")
     PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main h1")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
-    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div")
     BASKET_TOTAL = (By.CSS_SELECTOR, ".alert-info .alertinner strong")
