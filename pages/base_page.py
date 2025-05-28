@@ -14,7 +14,7 @@ class BasePage():
         #self.browser.implicitly_wait(timeout)
 
     def go_to_login_page(self):
-        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
 
     def is_element_present(self, how, what):
@@ -63,3 +63,9 @@ class BasePage():
     def go_to_basket(self):
         basket = self.browser.find_element(*BasePageLocators.BASKET_LINK)
         basket.click()
+
+    def should_be_authorized_user(self, timeout=10):
+        WebDriverWait(self.browser, timeout,0.1).until(
+            EC.presence_of_element_located(BasePageLocators.USER_ICON),
+            message="User icon is not presented, probably unauthorised user"
+        )
