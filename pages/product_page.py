@@ -1,8 +1,5 @@
 from .locators import ProductPageLocators
 from .base_page import BasePage
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException
 
 class ProductPage(BasePage):
     def add_to_cart(self):
@@ -24,11 +21,10 @@ class ProductPage(BasePage):
         basket_total = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL).text
         assert expected_price == basket_total, f"Basket price '{basket_total}' doesn't match product price '{expected_price}'"
 
-
-
-
-
     def had_success_message_disappeared(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), 'Success message should disappear'
+
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE),'Success message should not be displayed'
+
+

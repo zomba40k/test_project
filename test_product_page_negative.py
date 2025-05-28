@@ -1,4 +1,3 @@
-import pytest
 from .pages.product_page import ProductPage
 
 
