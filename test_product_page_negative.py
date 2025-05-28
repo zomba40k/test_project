@@ -6,12 +6,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page = ProductPage(browser, link)
     page.open()
 
-
-
-    # Добавляем товар в корзину
     page.add_to_cart()
-
-
 
     page.should_not_be_success_message()
 
